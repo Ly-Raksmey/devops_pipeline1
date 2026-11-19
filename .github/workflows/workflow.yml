@@ -1,23 +1,24 @@
 name: Building my first CI Pipeline
+
 on:
   push:
-    branch: [ main ]
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-  steps:
-    - name: Checkout Code
-      uses: actions/checkout@v5
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
 
-    - name: Set up node.js
-      uses: actions/setup-node@v4
-      with:
-        version: lts/*
+      - name: Set up node.js
+        uses: actions/setup-node@v4
+        with:
+          version: lts/*
 
-    - name: Install Dependencies
-      run: npm install
+      - name: Install Dependencies
+        run: npm install
 
-    - name: Run Test
-      run: npm test
+      - name: Run Test
+        run: npm test
