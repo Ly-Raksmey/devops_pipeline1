@@ -1,9 +1,11 @@
 name: Building my first CI Pipeline
 on:
-  branch: [ main ]
+  push:
+    branch: [ main ]
 
 jobs:
-  runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
   steps:
     - name: Checkout Code
